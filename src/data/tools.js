@@ -1,0 +1,95 @@
+// Fixed editorial ratings, 0-5 per criterion. These never change based on
+// user answers — only the weighting does. Review this table on a schedule and
+// update REVIEWED_ON when you do.
+export const REVIEWED_ON = "August 2026";
+
+export const TOOLS = [
+  {
+    id: "powerbi",
+    name: "Microsoft Power BI",
+    vendor: "Microsoft",
+    site: "https://www.microsoft.com/power-platform/products/power-bi",
+    note: "Cheapest serious enterprise BI, and hard to beat if you already run Microsoft 365 or Azure.",
+    r: { cost: 5, easeOfUse: 3, vizDepth: 4, governance: 4, scale: 4, embedding: 4, nlqAi: 4, selfService: 3, deployFlex: 3, pixelPerfect: 4, collab: 4, ecosystem: 5, realtime: 4, timeToValue: 4 },
+  },
+  {
+    id: "tableau",
+    name: "Tableau",
+    vendor: "Salesforce",
+    site: "https://www.tableau.com",
+    note: "Best-in-class visual analysis and data storytelling, with a large talent pool to hire from.",
+    r: { cost: 2, easeOfUse: 4, vizDepth: 5, governance: 3, scale: 4, embedding: 3, nlqAi: 3, selfService: 4, deployFlex: 4, pixelPerfect: 2, collab: 3, ecosystem: 5, realtime: 3, timeToValue: 4 },
+  },
+  {
+    id: "looker",
+    name: "Looker",
+    vendor: "Google Cloud",
+    site: "https://cloud.google.com/looker",
+    note: "LookML gives you version-controlled, governed metrics that scale across many teams.",
+    r: { cost: 1, easeOfUse: 2, vizDepth: 3, governance: 5, scale: 5, embedding: 4, nlqAi: 3, selfService: 3, deployFlex: 2, pixelPerfect: 3, collab: 3, ecosystem: 3, realtime: 3, timeToValue: 2 },
+  },
+  {
+    id: "qlik",
+    name: "Qlik Sense",
+    vendor: "Qlik",
+    site: "https://www.qlik.com/us/products/qlik-sense",
+    note: "The associative in-memory engine lets users wander off the guided path and still find things.",
+    r: { cost: 3, easeOfUse: 3, vizDepth: 4, governance: 4, scale: 4, embedding: 4, nlqAi: 3, selfService: 5, deployFlex: 5, pixelPerfect: 3, collab: 3, ecosystem: 3, realtime: 3, timeToValue: 3 },
+  },
+  {
+    id: "thoughtspot",
+    name: "ThoughtSpot",
+    vendor: "ThoughtSpot",
+    site: "https://www.thoughtspot.com",
+    note: "Search-first and AI-assisted, built for people who type questions rather than drag fields.",
+    r: { cost: 1, easeOfUse: 5, vizDepth: 3, governance: 4, scale: 4, embedding: 4, nlqAi: 5, selfService: 5, deployFlex: 3, pixelPerfect: 1, collab: 3, ecosystem: 2, realtime: 3, timeToValue: 3 },
+  },
+  {
+    id: "domo",
+    name: "Domo",
+    vendor: "Domo",
+    site: "https://www.domo.com",
+    note: "Cloud-native and highly social; strong when the goal is company-wide alignment quickly.",
+    r: { cost: 1, easeOfUse: 4, vizDepth: 4, governance: 3, scale: 3, embedding: 3, nlqAi: 3, selfService: 3, deployFlex: 1, pixelPerfect: 2, collab: 5, ecosystem: 2, realtime: 4, timeToValue: 4 },
+  },
+  {
+    id: "sisense",
+    name: "Sisense",
+    vendor: "Sisense",
+    site: "https://www.sisense.com",
+    note: "Purpose-built for embedding customised analytics inside someone else's software.",
+    r: { cost: 2, easeOfUse: 3, vizDepth: 3, governance: 3, scale: 4, embedding: 5, nlqAi: 3, selfService: 3, deployFlex: 4, pixelPerfect: 2, collab: 3, ecosystem: 2, realtime: 3, timeToValue: 3 },
+  },
+  {
+    id: "zoho",
+    name: "Zoho Analytics",
+    vendor: "Zoho",
+    site: "https://www.zoho.com/analytics",
+    note: "Affordable and quick to stand up, sized for small and mid-market teams.",
+    r: { cost: 5, easeOfUse: 4, vizDepth: 3, governance: 2, scale: 2, embedding: 4, nlqAi: 4, selfService: 3, deployFlex: 3, pixelPerfect: 3, collab: 3, ecosystem: 3, realtime: 2, timeToValue: 5 },
+  },
+  {
+    id: "lookerstudio",
+    name: "Looker Studio",
+    vendor: "Google",
+    site: "https://lookerstudio.google.com",
+    note: "Free and browser-based. Great for marketing reporting, thin on governance and scale.",
+    r: { cost: 5, easeOfUse: 5, vizDepth: 2, governance: 1, scale: 1, embedding: 1, nlqAi: 1, selfService: 2, deployFlex: 1, pixelPerfect: 1, collab: 3, ecosystem: 4, realtime: 2, timeToValue: 5 },
+  },
+  {
+    id: "quicksight",
+    name: "Amazon QuickSight",
+    vendor: "AWS",
+    site: "https://aws.amazon.com/quicksight",
+    note: "Serverless with pay-per-session pricing; the natural pick on an AWS-centric stack.",
+    r: { cost: 5, easeOfUse: 3, vizDepth: 3, governance: 3, scale: 4, embedding: 5, nlqAi: 4, selfService: 3, deployFlex: 1, pixelPerfect: 2, collab: 3, ecosystem: 3, realtime: 3, timeToValue: 4 },
+  },
+  {
+    id: "cognos",
+    name: "IBM Cognos Analytics",
+    vendor: "IBM",
+    site: "https://www.ibm.com/products/cognos-analytics",
+    note: "Heavyweight corporate and regulatory reporting, with on-premise deployment still first class.",
+    r: { cost: 2, easeOfUse: 2, vizDepth: 3, governance: 5, scale: 4, embedding: 2, nlqAi: 3, selfService: 2, deployFlex: 5, pixelPerfect: 5, collab: 3, ecosystem: 2, realtime: 2, timeToValue: 2 },
+  },
+];
