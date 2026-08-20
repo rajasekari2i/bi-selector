@@ -6,6 +6,8 @@ export const REVIEWED_ON = "August 2026";
 export const TOOLS = [
   {
     id: "powerbi",
+    openSource: false,
+    embedName: "Power BI Embedded",
     name: "Microsoft Power BI",
     vendor: "Microsoft",
     site: "https://www.microsoft.com/power-platform/products/power-bi",
@@ -14,6 +16,8 @@ export const TOOLS = [
   },
   {
     id: "tableau",
+    openSource: false,
+    embedName: "Tableau Embedded",
     name: "Tableau",
     vendor: "Salesforce",
     site: "https://www.tableau.com",
@@ -22,6 +26,8 @@ export const TOOLS = [
   },
   {
     id: "looker",
+    openSource: false,
+    embedName: "Looker Embed",
     name: "Looker",
     vendor: "Google Cloud",
     site: "https://cloud.google.com/looker",
@@ -30,6 +36,8 @@ export const TOOLS = [
   },
   {
     id: "qlik",
+    openSource: false,
+    embedName: "Qlik Embedded",
     name: "Qlik Sense",
     vendor: "Qlik",
     site: "https://www.qlik.com/us/products/qlik-sense",
@@ -38,6 +46,8 @@ export const TOOLS = [
   },
   {
     id: "thoughtspot",
+    openSource: false,
+    embedName: "ThoughtSpot Embedded",
     name: "ThoughtSpot",
     vendor: "ThoughtSpot",
     site: "https://www.thoughtspot.com",
@@ -46,6 +56,8 @@ export const TOOLS = [
   },
   {
     id: "domo",
+    openSource: false,
+    embedName: "Domo Everywhere",
     name: "Domo",
     vendor: "Domo",
     site: "https://www.domo.com",
@@ -54,6 +66,8 @@ export const TOOLS = [
   },
   {
     id: "sisense",
+    openSource: false,
+    embedName: "Sisense Embedded",
     name: "Sisense",
     vendor: "Sisense",
     site: "https://www.sisense.com",
@@ -62,6 +76,8 @@ export const TOOLS = [
   },
   {
     id: "zoho",
+    openSource: false,
+    embedName: "Zoho Analytics Embedded",
     name: "Zoho Analytics",
     vendor: "Zoho",
     site: "https://www.zoho.com/analytics",
@@ -70,6 +86,7 @@ export const TOOLS = [
   },
   {
     id: "lookerstudio",
+    openSource: false,
     name: "Looker Studio",
     vendor: "Google",
     site: "https://lookerstudio.google.com",
@@ -78,6 +95,8 @@ export const TOOLS = [
   },
   {
     id: "quicksight",
+    openSource: false,
+    embedName: "QuickSight Embedded",
     name: "Amazon QuickSight",
     vendor: "AWS",
     site: "https://aws.amazon.com/quicksight",
@@ -86,10 +105,41 @@ export const TOOLS = [
   },
   {
     id: "cognos",
+    openSource: false,
     name: "IBM Cognos Analytics",
     vendor: "IBM",
     site: "https://www.ibm.com/products/cognos-analytics",
     note: "Heavyweight corporate and regulatory reporting, with on-premise deployment still first class.",
     r: { cost: 2, easeOfUse: 2, vizDepth: 3, governance: 5, scale: 4, embedding: 2, nlqAi: 3, selfService: 2, deployFlex: 5, pixelPerfect: 5, collab: 3, ecosystem: 2, realtime: 2, timeToValue: 2 },
+  },
+
+  {
+    id: "superset",
+    name: "Apache Superset",
+    vendor: "Apache (open source)",
+    site: "https://superset.apache.org",
+    openSource: true,
+    embedName: "Superset Embed",
+    note: "Open-source, highly customisable and developer-friendly. You own the hosting and the upgrades.",
+    r: { cost: 5, easeOfUse: 2, vizDepth: 3, governance: 3, scale: 4, embedding: 4, nlqAi: 1, selfService: 3, deployFlex: 5, pixelPerfect: 2, collab: 2, ecosystem: 3, realtime: 3, timeToValue: 2 },
+  },
+  {
+    id: "metabase",
+    name: "Metabase",
+    vendor: "Metabase (open source)",
+    site: "https://www.metabase.com",
+    openSource: true,
+    embedName: "Metabase Embed",
+    note: "Open-source, simple and quick to adopt. Cost effective, but shallow on advanced analysis.",
+    r: { cost: 5, easeOfUse: 5, vizDepth: 2, governance: 2, scale: 3, embedding: 4, nlqAi: 2, selfService: 3, deployFlex: 5, pixelPerfect: 2, collab: 3, ecosystem: 3, realtime: 3, timeToValue: 5 },
+  },
+  {
+    id: "powerbiRS",
+    name: "Power BI Report Server",
+    vendor: "Microsoft",
+    site: "https://www.microsoft.com/power-platform/products/power-bi/report-server",
+    openSource: false,
+    note: "On-premises reporting for the Microsoft stack, with commercial licensing. Lags the cloud service on features.",
+    r: { cost: 4, easeOfUse: 3, vizDepth: 3, governance: 4, scale: 3, embedding: 2, nlqAi: 1, selfService: 2, deployFlex: 5, pixelPerfect: 5, collab: 2, ecosystem: 4, realtime: 2, timeToValue: 3 },
   },
 ];

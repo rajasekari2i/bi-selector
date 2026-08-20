@@ -7,6 +7,7 @@ export default function QuestionCard({
   index,
   answers,
   questions,
+  prefilled,
   onChoose,
   onBack,
   onNext,
@@ -23,6 +24,11 @@ export default function QuestionCard({
       <h2 className="q">{question.text}</h2>
       {question.help && <p className="help">{question.help}</p>}
       {question.multi && <p className="help">Select all that apply.</p>}
+      {prefilled && (
+        <p className="prefill-note">
+          Pre-filled from your decision path — change it if it isn't right.
+        </p>
+      )}
 
       <div role={question.multi ? "group" : "radiogroup"}>
         {question.options.map((o) => (

@@ -1,7 +1,8 @@
 import React from "react";
 import { REVIEWED_ON } from "../data/tools.js";
+import { displayName } from "../lib/score.js";
 
-export default function Leaderboard({ live, dead }) {
+export default function Leaderboard({ live, dead, treeAnswers, treeResult }) {
   return (
     <aside className="rail">
       <div className="railhead">
@@ -9,10 +10,24 @@ export default function Leaderboard({ live, dead }) {
         <span>Fit / 100</span>
       </div>
 
+      {treeResult && (
+        <div className="railpath">
+          Approved path points to <strong>{treeResult.tool}</strong>
+        </div>
+      )}
+
       {live.map((t, i) => (
-        <div key={t.id} className="row" data-lead={i === 0 ? "1" : "0"}>
+        <div
+          key={t.id}
+          className="row"
+          data-lead={i === 0 ? "1" : "0"}
+          data-onpath={t.onPath ? "1" : "0"}
+        >
           <div className="rowtop">
-            <span>{t.name}</span>
+            <span>
+              {displayName(t, treeAnswers)}
+              {t.onPath && <span className="pathdot" title="On approved path" />}
+            </span>
             <span className="num">{t.total}</span>
           </div>
           <div className="bar">
@@ -24,8 +39,10 @@ export default function Leaderboard({ live, dead }) {
       {dead.map((t) => (
         <div key={t.id} className="row" data-out="1">
           <div className="rowtop">
-            <span className="strike">{t.name}</span>
-            <span className="num">—</span>
+            <span className="strike">{displayName(t, treeAnswers)}</span>
+            <span className="num muted" title={t.out}>
+              —
+            </span>
           </div>
           <div className="bar">
             <div className="fill" style={{ width: "0%" }} />
@@ -34,10 +51,10 @@ export default function Leaderboard({ live, dead }) {
       ))}
 
       <p className="foot">
-        Ratings are fixed editorial judgements held in one table, last reviewed{" "}
-        {REVIEWED_ON}. Your answers change how much each criterion counts, plus a
-        stack-fit bonus. Confirm pricing and features with each vendor before you
-        commit.
+        <span className="pathdot inline" /> marks a tool on the approved decision
+        path. Ratings are fixed editorial judgements in one table, last reviewed{" "}
+        {REVIEWED_ON}; your answers change only how much each criterion counts.
+        Confirm pricing and features with each vendor before you commit.
       </p>
     </aside>
   );

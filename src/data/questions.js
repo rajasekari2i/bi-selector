@@ -1,3 +1,10 @@
+// Profile questions. These run AFTER the approved decision tree.
+//
+// Questions marked `prefilled: true` overlap with something the tree already
+// established, so App.jsx pre-selects an answer from the tree's path. The user
+// can still change it — the tree's recommendation is unaffected either way,
+// only the scorecard moves.
+//
 // Each option can do three things:
 //   w        -> adds weight to criteria (the normal case)
 //   bonus    -> flat points to specific tools (stack fit, which is a jump not a gradient)
@@ -31,9 +38,9 @@ export const QUESTIONS = [
     id: "budget",
     eyebrow: "Budget",
     text: "What can you spend per user, per month?",
-    help: "Choosing free rules out every paid platform, so pick it only if that is a hard limit.",
+    help: "This leaves only the free and open-source options, so pick it only if it is a hard limit.",
     options: [
-      { id: "free", label: "Nothing — it has to be free", w: { cost: 4 }, keepOnly: ["lookerstudio"] },
+      { id: "free", label: "Nothing — free or self-hosted open source only", w: { cost: 4 }, keepOnly: ["lookerstudio", "superset", "metabase"] },
       { id: "low", label: "Under $20", w: { cost: 4 } },
       { id: "mid", label: "$20 – $60", w: { cost: 2 } },
       { id: "high", label: "Above $60, or budget isn't the constraint", w: { vizDepth: 1 } },
@@ -43,15 +50,16 @@ export const QUESTIONS = [
     id: "stack",
     eyebrow: "Data platform",
     multi: true,
+    prefilled: true,
     text: "Where does most of your data actually live?",
-    help: "Pick every source that matters. This is the strongest single signal in the model.",
+    help: "Pick every source that matters. This is the strongest single signal in the scorecard.",
     options: [
-      { id: "ms", label: "Azure, SQL Server or Microsoft 365", w: { deployFlex: 1 }, bonus: { powerbi: 8 } },
-      { id: "aws", label: "AWS — Redshift, S3, Athena", w: {}, bonus: { quicksight: 8 } },
+      { id: "ms", label: "Azure, SQL Server or Microsoft 365", w: { deployFlex: 1 }, bonus: { powerbi: 8, powerbiRS: 6 } },
+      { id: "aws", label: "AWS — Redshift, S3, Athena", w: {}, bonus: { quicksight: 8, qlik: 3 } },
       { id: "gcp", label: "Google Cloud or BigQuery", w: {}, bonus: { looker: 8, lookerstudio: 6 } },
       { id: "lakehouse", label: "Snowflake or Databricks", w: { scale: 1 }, bonus: { looker: 5, tableau: 4, thoughtspot: 4, sisense: 4 } },
-      { id: "onprem", label: "On-premise databases", w: { deployFlex: 2 }, bonus: { qlik: 5, cognos: 5, powerbi: 4 } },
-      { id: "saas", label: "Spreadsheets and SaaS apps", w: { timeToValue: 2, easeOfUse: 1 }, bonus: { zoho: 6, domo: 5, lookerstudio: 4 } },
+      { id: "onprem", label: "On-premise databases", w: { deployFlex: 2 }, bonus: { qlik: 5, cognos: 5, powerbi: 4, superset: 3, metabase: 3 } },
+      { id: "saas", label: "Spreadsheets and SaaS apps", w: { timeToValue: 2, easeOfUse: 1 }, bonus: { zoho: 6, domo: 5, lookerstudio: 4, metabase: 3 } },
     ],
   },
   {
@@ -81,6 +89,7 @@ export const QUESTIONS = [
   {
     id: "deploy",
     eyebrow: "Deployment",
+    prefilled: true,
     text: "Where is the software allowed to run?",
     options: [
       { id: "saasok", label: "Vendor-hosted cloud is fine", w: {} },
