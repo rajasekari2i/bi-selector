@@ -14,7 +14,7 @@ export const QUESTIONS = [
   {
     id: "users",
     eyebrow: "Audience",
-    text: "Who opens the tool on a normal Tuesday?",
+    text: "Who will use the tool day to day?",
     help: "Answer for the majority, not the loudest voice.",
     options: [
       { id: "readers", label: "Business users reading dashboards", w: { easeOfUse: 3, collab: 2, timeToValue: 2 } },
