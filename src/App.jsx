@@ -197,6 +197,7 @@ export default function App() {
                 onChoose={chooseOption}
                 onBack={() => set({ step: s.step - 1 })}
                 onNext={advance}
+                onRestart={reset}
               />
             </>
           )}

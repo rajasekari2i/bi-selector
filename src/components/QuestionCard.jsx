@@ -11,6 +11,7 @@ export default function QuestionCard({
   onChoose,
   onBack,
   onNext,
+  onRestart,
 }) {
   const isOn = (id) =>
     Array.isArray(picked) ? picked.includes(id) : picked === id;
@@ -59,6 +60,9 @@ export default function QuestionCard({
         </button>
         <button className="btn ghost" onClick={onNext}>
           Skip
+        </button>
+        <button className="btn ghost" onClick={onRestart}>
+          Restart
         </button>
       </div>
 
